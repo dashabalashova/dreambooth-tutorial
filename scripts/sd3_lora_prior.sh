@@ -24,8 +24,8 @@ accelerate launch train_dreambooth_lora_sd3.py \
   --optimizer="AdamW" \
   --lr_scheduler="constant" \
   --lr_warmup_steps=0 \
-  --num_class_images=100 \
-  --max_train_steps=2000 \
+  --num_class_images=96 \
+  --max_train_steps=1920 \
   --report_to="wandb" \
   --validation_epochs=5 \
   --seed="0"
