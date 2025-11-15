@@ -1,0 +1,40 @@
+# 1. создать VM + ssh
+
+## 1.1. https://console.nebius.com/
+
+## 2.1. ssh
+
+ssh <user>@<IP>
+
+# 2. установка
+
+git clone https://github.com/huggingface/diffusers
+python3 -m venv ~/.venvs/dreambooth
+source ~/.venvs/dreambooth/bin/activate
+pip install --upgrade pip
+cd diffusers
+pip install -e .
+cd examples/dreambooth
+pip install -r requirements_sd3.txt
+python -m pip install "peft>=0.17.0"
+pip install wandb
+
+# login to Hugging Face (replace with your token)
+hf auth login --token hf_...
+hf auth whoami
+
+# 3. train + inference
+
+git clone https://github.com/dashabalashova/dreambooth-tutorial
+
+chmod +x dreambooth-tutorial/scripts/sd3_lora.sh
+dreambooth-tutorial/scripts/sd3_lora.sh
+
+python dreambooth-tutorial/inference.py \
+  --pretrained_model_name_or_path stabilityai/stable-diffusion-3.5-medium \
+  --lora dreambooth-tutorial/outputs/sd3-lora/pytorch_lora_weights.safetensors \
+  --prompts_file dreambooth-tutorial/data/prompts/gmc_cat.txt \
+  --outdir dreambooth-tutorial/outputs/sd3-lora/images --num_images 4 --num_steps 28 --guidance 7.5 --height 1024 --width 1024
+
+🐢🐢🐢🐢🐢🐢🐢🐢 🐢🐢🐢🐢🐢🐢🐢🐢 🐢🐢🐢🐢🐢🐢🐢🐢 🐢🐢🐢🐢🐢🐢🐢🐢 🐢🐢🐢🐢🐢🐢🐢🐢 🐢🐢🐢🐢🐢🐢🐢🐢 🐢🐢🐢🐢🐢🐢🐢🐢 🐢🐢🐢🐢🐢🐢🐢🐢
+
