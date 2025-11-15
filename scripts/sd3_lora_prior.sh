@@ -3,9 +3,9 @@
 set -euo pipefail
 
 export MODEL_NAME="stabilityai/stable-diffusion-3.5-medium"
-export INSTANCE_DIR="data/cat_mc"
-export CLASS_DIR="data/cat_class"
-export OUTPUT_DIR="outputs/trained-sd3-lora-prior"
+export INSTANCE_DIR="dreambooth-tutorial/data/cat_mc"
+export CLASS_DIR="dreambooth-tutorial/data/cat_class"
+export OUTPUT_DIR="dreambooth-tutorial/outputs/trained-sd3-lora-prior"
 
 accelerate launch train_dreambooth_lora_sd3.py \
   --with_prior_preservation \

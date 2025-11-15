@@ -3,8 +3,8 @@
 set -euo pipefail
 
 export MODEL_NAME="stabilityai/stable-diffusion-3.5-medium"
-export INSTANCE_DIR="data/cat_mc"
-export OUTPUT_DIR="outputs/trained-sd3-lora-text"
+export INSTANCE_DIR="dreambooth-tutorial/data/cat_mc"
+export OUTPUT_DIR="dreambooth-tutorial/outputs/trained-sd3-lora-text"
 
 accelerate launch train_dreambooth_lora_sd3.py \
   --train_text_encoder \
