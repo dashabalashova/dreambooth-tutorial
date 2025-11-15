@@ -15,17 +15,17 @@ accelerate launch train_dreambooth_lora_sd3.py \
   --class_prompt="a photo of a cat, full body, natural light" \
   --validation_prompt="a photo of gmc cat walking in the forest" \
   --with_prior_preservation \
-  --prior_loss_weight 0.1 \
+  --prior_loss_weight 0.05 \
   --num_class_images=24 \
-  --learning_rate=1e-04 \
-  --text_encoder_lr=1e-05 \
+  --learning_rate=5e-04 \
+  --text_encoder_lr=5e-05 \
   --resolution=512 \
   --train_batch_size=1 \
   --gradient_accumulation_steps=4 \
   --optimizer="AdamW" \
   --lr_scheduler="constant_with_warmup" \
   --lr_warmup_steps=100 \
-  --max_train_steps=600 \
+  --max_train_steps=456 \
   --report_to="wandb" \
   --validation_epochs=25 \
   --seed=0
