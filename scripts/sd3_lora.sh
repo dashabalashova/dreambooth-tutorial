@@ -18,14 +18,14 @@ accelerate launch train_dreambooth_lora_sd3.py \
   --prior_loss_weight 0.05 \
   --num_class_images=24 \
   --learning_rate=5e-04 \
-  --text_encoder_lr=5e-05 \
+  --text_encoder_lr=1e-04 \
   --resolution=512 \
   --train_batch_size=1 \
   --gradient_accumulation_steps=4 \
   --optimizer="AdamW" \
   --lr_scheduler="constant_with_warmup" \
   --lr_warmup_steps=100 \
-  --max_train_steps=456 \
+  --max_train_steps=756 \
   --report_to="wandb" \
   --validation_epochs=25 \
   --seed=0
