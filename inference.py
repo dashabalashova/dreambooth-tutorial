@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-inference_no_fp16.py
+inference.py
 Inference for SD3 + LoRA using float32 components (no fp16).
 Mirrors the final-inference pattern from train_dreambooth_lora_sd3.py:
  - loads tokenizers + three text encoders, VAE, transformer explicitly
  - constructs StableDiffusion3Pipeline with those components (torch_dtype=torch.float32)
  - loads LoRA via pipeline.load_lora_weights(dir) or (dir, weight_name=file)
 """
+
 import argparse
 from pathlib import Path
 import sys
