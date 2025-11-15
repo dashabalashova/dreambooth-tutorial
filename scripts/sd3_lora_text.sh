@@ -15,7 +15,7 @@ accelerate launch train_dreambooth_lora_sd3.py \
   --validation_prompt="a photo of <m-c> cat walking in the forest" \
   --learning_rate=1e-4 \
   --text_encoder_lr=1e-4 \
-  --resolution=256 \
+  --resolution=1024 \
   --train_batch_size=1 \
   --gradient_accumulation_steps=1 \
   --optimizer="AdamW" \
