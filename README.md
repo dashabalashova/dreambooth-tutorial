@@ -33,7 +33,7 @@ The tutorial expects the repository layout like this (adjust paths as needed):
 
 ## 1. Create VM & connect 
 
-The workflow requires a VM equipped with a GPU that has at least 75 GB of VRAM. The example runs were performed on an NVIDIA H200. You can create a Compute virtual machine (VM) through the [web console](https://console.nebius.com), the CLI, or the Terraform provider, see the [Nebius AI Cloud documentation](https://docs.nebius.com/compute/virtual-machines/manage) for instructions. After creating VM:
+The workflow requires a VM equipped with a GPU that has at least 75 GB of HBM. The example runs were performed on an NVIDIA H200. You can create a Compute virtual machine (VM) through the [web console](https://console.nebius.com), the CLI, or the Terraform provider, see the [Nebius AI Cloud documentation](https://docs.nebius.com/compute/virtual-machines/manage) for instructions. After creating VM:
 ```
 ssh <user>@<IP>
 ```
