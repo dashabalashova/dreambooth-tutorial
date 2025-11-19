@@ -20,9 +20,8 @@ This guide walks you through:
 
 ## Repository layout
 
-The tutorial repository `dreambooth-tutorial/` has layout ...:
+The tutorial repository `dreambooth-tutorial/` is organized as follows (paths are relative to the repo root):
 
-* `dreambooth-tutorial/`
 * `data/cat_gmc/` – instance images (your example subject images)
 * `data/prompts/recontextualization.txt` – prompts for inference
 * `scripts/sd3_lora.sh` – helper script to launch training
