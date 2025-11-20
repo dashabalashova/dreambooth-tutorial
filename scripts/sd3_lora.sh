@@ -14,8 +14,9 @@ accelerate launch train_dreambooth_lora_sd3.py \
   --instance_prompt="a photo of gmc cat" \
   --class_prompt="a photo of a cat, full body, natural light" \
   --validation_prompt="a photo of gmc cat walking in the forest" \
+  --rank=4 \
   --with_prior_preservation \
-  --prior_loss_weight 0.05 \
+  --prior_loss_weight=5e-02 \
   --num_class_images=24 \
   --learning_rate=5e-04 \
   --text_encoder_lr=1e-04 \
