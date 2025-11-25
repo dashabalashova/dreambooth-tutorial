@@ -36,9 +36,9 @@ The tutorial repository `dreambooth-tutorial/` is organized as follows (paths ar
 
 ## 1. Create VM & connect 
 
-This workflow requires a VM with a GPU that has at least 80 GB of HBM (the example runs were performed on an NVIDIA H200). In our measurements, inference peak usage was ~40.6 GB reserved (of which ~36.0 GB was actually allocated). Based on the reserved inference footprint, a full (all-parameters) fine-tune – once you add optimizer state, gradients and activations – typically increases memory needs by roughly 4x, so you should plan for ~162.4 GB of HBM (or use multi-GPU/model/optimizer sharding). We don't tune all the parameters. Instead we use LoRA (low-rank adapters) – an approach of Parameter Efficient Finetuning (PEFT).
+Example runs were performed on NVIDIA H200. In our measurements, inference peak usage was ~42.5 GB reserved (of which ~37.8 GB was actually allocated) – lower GPU memory usage is possible with `enable_sequential_cpu_offload()`. Based on the reserved inference footprint, a full (all-parameters) fine-tune – once you add optimizer state, gradients and backward activations – typically increases memory needs by roughly 4x, so plan for ~170 GB of VRAM (use multi-GPU / model / optimizer sharding). 
 
-By contrast, LoRA (PEFT) in our runs peaked at ~78.8 GB and therefore fits on single 80 GB-class GPUs such as H100/H200.
+We do not tune all parameters, instead we use LoRA (low-rank adapters) to fine-tune the diffusion model and the text encoder – a Parameter Efficient Finetuning (PEFT) approach whose measured fine-tuning memory peak was 48.1 GB of VRAM.
 
 You can create a Compute virtual machine (VM) through the [web console](https://console.nebius.com) (choose “Auto assign dynamic IP” for the Public IP), the CLI, or the Terraform provider, see the [Nebius AI Cloud documentation](https://docs.nebius.com/compute/virtual-machines/manage) for instructions. After creating VM:
 ```
